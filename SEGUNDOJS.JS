@@ -9,28 +9,54 @@ window.addEventListener("load", () => {
 });
 
 // ===============================
-// HEADER SHOW ONLY AT TOP
+// HEADER
 // ===============================
 
 const header = document.querySelector(".header");
 
+// ===============================
+// MOBILE MENU
+// ===============================
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+const navbar = document.querySelector(".navbar");
+
+if(menuToggle && navbar){
+
+    menuToggle.addEventListener("click", () => {
+
+        navbar.classList.toggle("mobile-active");
+
+        // CAMBIAR ICONO
+
+        if(navbar.classList.contains("mobile-active")){
+
+            menuToggle.innerHTML = "✕";
+
+        }else{
+
+            menuToggle.innerHTML = "☰";
+
+        }
+
+    });
+
+}
+
+// ===============================
+// HEADER SHOW / HIDE
+// ===============================
+
+let lastScroll = 0;
+
 window.addEventListener("scroll", () => {
 
-    // MOSTRAR SOLO CUANDO ESTÁS ARRIBA
+    const currentScroll = window.scrollY;
 
-    if(window.scrollY <= 50){
+    // HEADER ACTIVO
 
-        header.classList.add("show");
-
-    }else{
-
-        header.classList.remove("show");
-
-    }
-
-    // CAMBIO DE FONDO
-
-    if(window.scrollY > 20){
+    if(currentScroll > 20){
 
         header.classList.add("active");
 
@@ -40,17 +66,29 @@ window.addEventListener("scroll", () => {
 
     }
 
+    // HEADER HIDE
+
+    if(currentScroll > 80){
+
+        if(currentScroll > lastScroll){
+
+            header.classList.add("hide");
+
+        }else{
+
+            header.classList.remove("hide");
+
+        }
+
+    }else{
+
+        header.classList.remove("hide");
+
+    }
+
+    lastScroll = currentScroll;
+
 });
-
-// ===============================
-// MOSTRAR HEADER AL CARGAR
-// ===============================
-
-if(window.scrollY <= 50){
-
-    header.classList.add("show");
-
-}
 
 // ===============================
 // SMOOTH SCROLL
@@ -62,9 +100,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
 
         if(target){
+
+            // CERRAR MENU MOBILE
+
+            if(navbar){
+
+                navbar.classList.remove("mobile-active");
+
+            }
+
+            if(menuToggle){
+
+                menuToggle.innerHTML = "☰";
+
+            }
 
             target.scrollIntoView({
                 behavior: "smooth"
@@ -88,7 +142,8 @@ window.addEventListener("scroll", () => {
 
     if(heroImage){
 
-        heroImage.style.transform = `translateY(${scrollPosition * 0.08}px)`;
+        heroImage.style.transform =
+        `translateY(${scrollPosition * 0.05}px)`;
 
     }
 
@@ -99,7 +154,7 @@ window.addEventListener("scroll", () => {
 // ===============================
 
 const revealElements = document.querySelectorAll(
-    ".news-card, .gallery-item"
+    ".news-card, .gallery-item, .apple-card"
 );
 
 const revealOnScroll = () => {
@@ -108,11 +163,13 @@ const revealOnScroll = () => {
 
     revealElements.forEach(element => {
 
-        const elementTop = element.getBoundingClientRect().top;
+        const elementTop =
+        element.getBoundingClientRect().top;
 
         if(elementTop < windowHeight - 100){
 
             element.style.opacity = "1";
+
             element.style.transform = "translateY(0)";
 
         }
@@ -150,21 +207,28 @@ revealOnScroll();
 // MODALS
 // ===============================
 
-const openButtons = document.querySelectorAll(".open-modal");
+const openButtons =
+document.querySelectorAll(".open-modal");
 
-const modals = document.querySelectorAll(".modal");
+const modals =
+document.querySelectorAll(".modal");
 
-const closeButtons = document.querySelectorAll(".close-modal");
+const closeButtons =
+document.querySelectorAll(".close-modal");
 
+// ===============================
 // ABRIR MODAL
+// ===============================
 
 openButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const modalId = button.getAttribute("data-modal");
+        const modalId =
+        button.getAttribute("data-modal");
 
-        const modal = document.getElementById(modalId);
+        const modal =
+        document.getElementById(modalId);
 
         if(modal){
 
@@ -178,7 +242,9 @@ openButtons.forEach(button => {
 
 });
 
+// ===============================
 // CERRAR MODAL
+// ===============================
 
 closeButtons.forEach(button => {
 
@@ -194,7 +260,9 @@ closeButtons.forEach(button => {
 
 });
 
-// CERRAR AL DAR CLICK AFUERA
+// ===============================
+// CERRAR CLICK AFUERA
+// ===============================
 
 window.addEventListener("click", (e) => {
 
@@ -212,7 +280,9 @@ window.addEventListener("click", (e) => {
 
 });
 
+// ===============================
 // CERRAR CON ESC
+// ===============================
 
 window.addEventListener("keydown", (e) => {
 
