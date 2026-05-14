@@ -7,9 +7,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Convocatorias | RUH</title>
+    <title>Revista Editorial</title>
 
     <!-- GOOGLE FONTS -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./ESTILOS.CSS">
+
     <link rel="stylesheet" href="./SEGUNDOCS.CSS">
+    <link rel="stylesheet" href="./ESTILOS.CSS">
 
 </head>
 
@@ -30,27 +32,35 @@
 
         <div class="second-header">
 
-            <!-- BOTON -->
+            <!-- BOTÓN REGRESO -->
+
             <a href="Principal.html" class="back-button">
-                ← Regresar
+
+                ← Volver
+
             </a>
 
-            <!-- MENU -->
+            <!-- BOTÓN MENU MOBILE -->
+
             <button class="menu-toggle" id="menu-toggle">
+
                 ☰
+
             </button>
 
         </div>
 
         <!-- LINE -->
+
         <div class="line"></div>
 
         <!-- NAVBAR -->
+
         <nav class="navbar" id="navbar">
 
             <ul>
 
-            <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
 
                 <li><a href="CONVOCATORIAS.HTML">Convocatorias</a></li>
 
@@ -60,10 +70,9 @@
 
                 <li><a href="#colaboracion">Colaboración</a></li>
 
-                <li><a href="ACTIVIDADES.HTML">Actividades</a></li>
+                <li><a href="#actividades">Actividades</a></li>
 
                 <li><a href="#contacto">Contacto</a></li>
-
 
             </ul>
 
@@ -71,250 +80,181 @@
 
     </header>
 
-    <!-- ================= CONVOCATORIAS ================= -->
+    <!-- ================= HERO ================= -->
 
-    <section class="apple-convocatorias" id="convocatorias">
+    <section class="hero" id="inicio">
 
-        <div class="section-title">
+        <div class="hero-content">
 
-            <h2>
-                Convocatorias Destacadas
-            </h2>
+            <span class="categoria">
+                REVISTA INSTITUCIONAL
+            </span>
+
+            <h1>
+                Innovación, cultura y actividades que transforman nuestra comunidad educativa
+            </h1>
 
             <p>
-                Oportunidades, eventos y actividades para la comunidad universitaria.
+                Descubre noticias, convocatorias, proyectos destacados y experiencias que impulsan el crecimiento académico y creativo.
             </p>
-
-        </div>
-
-        <!-- GRID -->
-
-        <div class="apple-grid">
-
-            <!-- CARD 1 -->
-
-            <article class="apple-card large">
-
-                <img src="./FOTOS/3.jpg" alt="Convocatoria">
-
-                <div class="overlay"></div>
-
-                <div class="apple-content">
-
-                    <span>
-                        CONVOCATORIA
-                    </span>
-
-                    <h3>
-                        Participa en la nueva edición de la revista universitaria
-                    </h3>
-
-                    <button class="open-modal" data-modal="modal1">
-                        Leer más
-                    </button>
-
-                </div>
-
-            </article>
-
-            <!-- CARD 2 -->
-
-            <article class="apple-card">
-
-                <img src="./FOTOS/2.jpg" alt="Evento">
-
-                <div class="overlay"></div>
-
-                <div class="apple-content">
-
-                    <span>
-                        EVENTO
-                    </span>
-
-                    <h3>
-                        Primer encuentro cultural garza
-                    </h3>
-
-                    <button class="open-modal" data-modal="modal2">
-                        Ver información
-                    </button>
-
-                </div>
-
-            </article>
-
-            <!-- CARD 3 -->
-
-            <article class="apple-card">
-
-                <img src="./FOTOS/2.jpg" alt="Evento">
-
-                <div class="overlay"></div>
-
-                <div class="apple-content">
-
-                    <span>
-                        EVENTO
-                    </span>
-
-                    <h3>
-                        Primer encuentro cultural garza
-                    </h3>
-
-                    <button class="open-modal" data-modal="modal2">
-                        Ver información
-                    </button>
-
-                </div>
-
-            </article>
-
-            <!-- CARD 4 -->
-
-            <article class="apple-card">
-
-                <img src="./FOTOS/4.jpg" alt="Actividad">
-
-                <div class="overlay"></div>
-
-                <div class="apple-content">
-
-                    <span>
-                        ACTIVIDAD
-                    </span>
-
-                    <h3>
-                        Taller de fotografía y diseño editorial
-                    </h3>
-
-                    <button class="open-modal" data-modal="modal3">
-                        Descubrir
-                    </button>
-
-                </div>
-
-            </article>
 
         </div>
 
     </section>
 
-    <!-- ================= MODAL 1 ================= -->
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
 
-    <div class="modal" id="modal1">
+    <section class="main-news">
 
-        <div class="modal-box">
+        <!-- ARTÍCULO 1 -->
 
-            <span class="close-modal">
-                &times;
-            </span>
+        <article class="news-card">
 
-            <img src="./FOTOS/3.jpg" alt="Convocatoria">
+            <div class="news-image">
 
-            <div class="modal-content">
+                <img src="./FOTOS/5.JPG" alt="Noticia">
 
-                <span>
-                    CONVOCATORIA
+            </div>
+
+            <div class="news-info">
+
+                <span class="news-category">
+                    CONVOCATORIAS
                 </span>
 
                 <h2>
-                    Participa en la nueva edición de la revista universitaria
+                    Participa en las nuevas actividades académicas y culturales 2026
                 </h2>
 
                 <p>
-                    Forma parte de nuestra nueva edición compartiendo artículos,
-                    proyectos, fotografías, investigaciones y propuestas creativas
-                    que inspiren a la comunidad universitaria.
+                    Explora las oportunidades disponibles para estudiantes y docentes en esta nueva edición institucional.
                 </p>
+
+                <a href="https://tulink.com" target="_blank" class="news-button">
+                    Leer más
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ARTÍCULO 2 -->
+
+        <article class="news-card reverse">
+
+            <div class="news-image">
+
+                <img src="./FOTOS/8.JPG" alt="Noticia">
+
+            </div>
+
+            <div class="news-info">
+
+                <span class="news-category">
+                    ACTIVIDADES
+                </span>
+
+                <h2>
+                    Eventos y experiencias que fortalecen la comunidad estudiantil
+                </h2>
 
                 <p>
-                    Buscamos talento estudiantil con ideas innovadoras y contenido
-                    de impacto cultural, académico y social.
+                    Conoce las actividades recientes, proyectos colaborativos y eventos especiales realizados dentro de la institución.
                 </p>
 
+                <a href="https://tulink.com" target="_blank" class="news-button">
+                    Explorar
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ARTÍCULO 3 -->
+
+        <article class="news-card">
+
+            <div class="news-image">
+
+                <img src="./FOTOS/9.JPG" alt="Noticia">
+
+            </div>
+
+            <div class="news-info">
+
+                <span class="news-category">
+                    EDICIONES
+                </span>
+
+                <h2>
+                    Descubre las publicaciones y ediciones más recientes
+                </h2>
+
+                <p>
+                    Accede a contenido exclusivo, galerías fotográficas y publicaciones institucionales destacadas.
+                </p>
+
+                <a href="https://tulink.com" target="_blank" class="news-button">
+                    Ver edición
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+
+    <section class="gallery-section">
+
+        <div class="gallery-title">
+
+            <h2>
+                Galería Fotográfica
+            </h2>
+
+            <p>
+                Momentos destacados y experiencias institucionales
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="./FOTOS/6.JPG" alt="Foto">
+            </div>
+
+            <div class="gallery-item">
+                <img src="./FOTOS/7.JPG" alt="Foto">
+            </div>
+
+            <div class="gallery-item">
+                <img src="./FOTOS/9.JPG" alt="Foto">
+            </div>
+
+            <div class="gallery-item">
+                <img src="./FOTOS/3.jpg" alt="Foto">
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-    <!-- ================= MODAL 2 ================= -->
+    <!-- ================= BOTÓN FINAL ================= -->
 
-    <div class="modal" id="modal2">
+    <section class="final-button">
 
-        <div class="modal-box">
+        <a href="https://tulink.com" target="_blank">
 
-            <span class="close-modal">
-                &times;
-            </span>
+            <button>
+                Ver Más Noticias
+            </button>
 
-            <img src="./FOTOS/2.jpg" alt="Evento">
+        </a>
 
-            <div class="modal-content">
-
-                <span>
-                    EVENTO
-                </span>
-
-                <h2>
-                    Primer encuentro cultural garza
-                </h2>
-
-                <p>
-                    Disfruta de actividades artísticas, exposiciones, música,
-                    danza y conferencias culturales en un espacio diseñado
-                    para fortalecer la convivencia universitaria.
-                </p>
-
-                <p>
-                    El evento contará con invitados especiales, talleres y
-                    presentaciones en vivo para toda la comunidad estudiantil.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ================= MODAL 3 ================= -->
-
-    <div class="modal" id="modal3">
-
-        <div class="modal-box">
-
-            <span class="close-modal">
-                &times;
-            </span>
-
-            <img src="./FOTOS/4.jpg" alt="Actividad">
-
-            <div class="modal-content">
-
-                <span>
-                    ACTIVIDAD
-                </span>
-
-                <h2>
-                    Taller de fotografía y diseño editorial
-                </h2>
-
-                <p>
-                    Aprende técnicas profesionales de composición, iluminación,
-                    edición fotográfica y diseño editorial aplicadas a proyectos
-                    universitarios.
-                </p>
-
-                <p>
-                    El taller está dirigido a estudiantes interesados en medios
-                    visuales, comunicación y creación de contenido digital.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+    </section>
 
     <!-- ================= FOOTER ================= -->
 
@@ -322,8 +262,11 @@
 
         <div class="footer-container">
 
-            <!-- LEFT -->
+            <!-- LEFT SIDE -->
+
             <div class="footer-left">
+
+                <!-- LOGO -->
 
                 <div class="footer-logo">
 
@@ -335,14 +278,16 @@
 
                 </div>
 
+                <!-- DESCRIPTION -->
+
                 <p>
-                    Somos una revista universitaria dedicada a compartir actividades,
-                    cultura, convocatorias y proyectos que inspiran a la comunidad estudiantil.
+                    Somos una revista universitaria dedicada a compartir actividades, cultura, convocatorias y proyectos que inspiran a la comunidad estudiantil y fomentan el desarrollo académico, artístico y social de las nuevas generaciones.
                 </p>
 
             </div>
 
-            <!-- RIGHT -->
+            <!-- RIGHT SIDE -->
+
             <div class="footer-right">
 
                 <h2>
@@ -350,25 +295,28 @@
                 </h2>
 
                 <p>
-                    Recibe noticias, convocatorias, actividades y nuevas ediciones directamente en tu correo.
+                    Recibe noticias, convocatorias, actividades y nuevas ediciones directamente en tu correo para mantenerte conectado con la comunidad universitaria.
                 </p>
+
+                <!-- BUTTON -->
 
                 <button class="footer-button">
                     SUSCRIBIRME
                 </button>
 
                 <!-- SOCIAL -->
+
                 <div class="footer-social">
 
                     <a href="https://www.instagram.com/ru_huasteca/" target="_blank">
                         Instagram
                     </a>
 
-                    <a href="https://www.instagram.com/ru_huasteca/" target="_blank">
+                    <a href="https://www.facebook.com/" target="_blank">
                         Facebook
                     </a>
 
-                    <a href="https://www.instagram.com/ru_huasteca/" target="_blank">
+                    <a href="https://www.tiktok.com/" target="_blank">
                         TikTok
                     </a>
 
@@ -383,9 +331,11 @@
         </div>
 
         <!-- LINE -->
+
         <div class="footer-line"></div>
 
         <!-- PARTNERS -->
+
         <div class="footer-partners">
 
             <span>
@@ -422,10 +372,12 @@
 
         </div>
 
-        <!-- LINE -->
+        <!-- SECOND LINE -->
+
         <div class="footer-line"></div>
 
         <!-- BOTTOM -->
+
         <div class="footer-bottom">
 
             <a href="#">
@@ -440,7 +392,22 @@
 
     </footer>
 
+    <!-- ================= SECCIONES ================= -->
+
+    <section id="convocatorias"></section>
+
+    <section id="ediciones"></section>
+
+    <section id="nosotros"></section>
+
+    <section id="colaboracion"></section>
+
+    <section id="actividades"></section>
+
+    <section id="contacto"></section>
+
     <!-- JS -->
+
     <script src="./SEGUNDOJS.JS"></script>
 
 </body>
