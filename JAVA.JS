@@ -6,15 +6,27 @@ const header = document.querySelector(".header");
 
 window.addEventListener("scroll", () => {
 
-    if (header) {
+    if(header){
 
-        if (window.scrollY > 50) {
+        // EFECTO BACKGROUND
+        if(window.scrollY > 50){
 
             header.classList.add("active");
 
-        } else {
+        }else{
 
             header.classList.remove("active");
+
+        }
+
+        // OCULTAR HEADER
+        if(window.scrollY > 20){
+
+            header.classList.add("hide");
+
+        }else{
+
+            header.classList.remove("hide");
 
         }
 
@@ -30,6 +42,66 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
 
     document.body.classList.add("loaded");
+
+});
+
+
+// ===============================
+// MENÚ MOBILE
+// ===============================
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const navbar = document.getElementById("navbar");
+
+if (menuToggle && navbar) {
+
+    menuToggle.addEventListener("click", () => {
+
+        navbar.classList.toggle("mobile-active");
+
+    });
+
+}
+
+
+// ===============================
+// CERRAR MENU AL DAR CLICK
+// ===============================
+
+const navLinks = document.querySelectorAll(".navbar a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        const targetId = this.getAttribute("href");
+
+        // SCROLL SUAVE
+        if(targetId.startsWith("#")){
+
+            e.preventDefault();
+
+            const target = document.querySelector(targetId);
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+        // CERRAR MENU EN MOBILE
+        if(window.innerWidth <= 768){
+
+            navbar.classList.remove("mobile-active");
+
+        }
+
+    });
 
 });
 
@@ -52,45 +124,12 @@ if (chatButton) {
 
 
 // ===============================
-// SCROLL SUAVE NAVBAR
-// ===============================
-
-const navLinks = document.querySelectorAll(".navbar a");
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", function(e){
-
-        const targetId = this.getAttribute("href");
-
-        if(targetId.startsWith("#")){
-
-            e.preventDefault();
-
-            const target = document.querySelector(targetId);
-
-            if(target){
-
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
-
-        }
-
-    });
-
-});
-
-
-// ===============================
 // PARALLAX HERO IMAGE
 // ===============================
 
 const heroImage = document.querySelector(".hero-image img");
 
-if (heroImage) {
+if (heroImage && window.innerWidth > 768) {
 
     window.addEventListener("scroll", () => {
 
@@ -120,7 +159,7 @@ const firebaseConfig = {
 
     messagingSenderId: "343356805967",
 
-    appId: "1:343356805967:web:df1b3df923dcb7b1f4eb3a",
+    appId: "343356805967-e072b0kro6veivf07utoknjr9rgmaqjq.apps.googleusercontent.com",
 
     measurementId: "G-BBHC5HB7R0"
 
@@ -198,3 +237,47 @@ auth.onAuthStateChanged((user) => {
     }
 
 });
+
+
+// ===============================
+// EFECTO REVEAL CARDS
+// ===============================
+
+const cards = document.querySelectorAll(".article-card");
+
+const revealCards = () => {
+
+    const triggerBottom = window.innerHeight * 0.9;
+
+    cards.forEach(card => {
+
+        const cardTop = card.getBoundingClientRect().top;
+
+        if(cardTop < triggerBottom){
+
+            card.style.opacity = "1";
+
+            card.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
+};
+
+
+// ESTILOS INICIALES
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+
+    card.style.transform = "translateY(40px)";
+
+    card.style.transition = "all 0.8s ease";
+
+});
+
+window.addEventListener("scroll", revealCards);
+
+window.addEventListener("load", revealCards);
